@@ -6,6 +6,7 @@ import { Cliente } from 'src/app/shared/models/cliente-model';
 import { ClienteService } from '../cliente.service';
 import { CepService } from 'src/app/shared/cep.service';
 import { Endereco } from 'src/app/shared/models/endereco-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-cliente',
@@ -38,7 +39,8 @@ export class AddClienteComponent implements OnInit{
 
   constructor(private route: ActivatedRoute,
               private clientService: ClienteService,
-              private cepService: CepService){}
+              private cepService: CepService,
+              private router: Router){}
 
   ngOnInit(): void {
     this.verifyRoute();
@@ -96,6 +98,36 @@ export class AddClienteComponent implements OnInit{
       localidade: cep.localidade,
       estado: cep.uf,
     })
+  }
+
+  createClient(): void {
+    let data = new Date(this.formClient.getRawValue().dataNascimento)
+
+    let cliente: Cliente = {
+      nome: this.formClient.getRawValue().nome,
+      sobrenome: this.formClient.getRawValue().sobrenome,
+      sexo: this.formClient.getRawValue().sexo,
+      cpf: this.formClient.getRawValue().cpf,
+      dataNascimento: data,
+      telefone: this.formClient.getRawValue().telefone,
+      cep: this.formClient.getRawValue().cep,
+      logradouro: this.formClient.getRawValue().logradouro,
+      numero: this.formClient.getRawValue().numero,
+      bairro: this.formClient.getRawValue().bairro,
+      complemento: this.formClient.getRawValue().complemento,
+      localidade: this.formClient.getRawValue().localidade,
+      estado: this.formClient.getRawValue().estado,
+    }
+    this.serviceSub = this.clientService.postClient(cliente).subscribe()
+
+    alert("Cliente salvo com sucesso!")
+
+    this.router.navigate(['/client/list']);
+
+  }
+
+  updateClient(): void {
+
   }
 
 

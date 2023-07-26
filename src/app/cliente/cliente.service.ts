@@ -19,4 +19,8 @@ export class ClienteService {
   getClientById(id: number): Observable<Cliente>{
     return this.http.get<Cliente>(`${this.serverUrl}/${id}`)
   }
+
+  postClient(cliente: Cliente): Observable<Cliente>{
+    return this.http.post<Cliente>(this.serverUrl, cliente)
+  }
 }
