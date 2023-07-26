@@ -1,1 +1,102 @@
-<p>add-cliente works!</p>
+<div class="titulo">
+  <app-title title="Cadastro do Cliente"></app-title>
+</div>
+
+<div class="formulario">
+  <form [formGroup]="formClient">
+      <mat-form-field >
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome">
+        <mat-error>Campo Obrigátorio</mat-error>
+      </mat-form-field>
+
+      <mat-form-field >
+        <mat-label>Sobrenome</mat-label>
+        <input matInput formControlName="sobrenome">
+        <mat-error>Campo Obrigátorio</mat-error>
+      </mat-form-field>
+      <p>
+      <mat-form-field>
+        <mat-label>Sexo</mat-label>
+        <mat-select formControlName="sexo">
+          <mat-option>-- None --</mat-option>
+          <mat-option value="masculino">Masculino</mat-option>
+          <mat-option value="feminino">Feminino</mat-option>
+        </mat-select>
+        <mat-error>Campo Obrigátorio</mat-error>
+      </mat-form-field>
+
+      <mat-form-field >
+        <mat-label>Data Nascimento</mat-label>
+        <input matInput formControlName="dataNascimento">
+        <mat-error>Campo Obrigátorio</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>CPF</mat-label>
+        <input matInput formControlName="cpf">
+        <mat-error>Campo Obrigátorio</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Celular</mat-label>
+        <input matInput formControlName="telefone">
+        <mat-error>Campo Obrigátorio</mat-error>
+      </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-label>CEP</mat-label>
+          <input matInput formControlName="cep" id="cep">
+          <mat-error>Campo Obrigátorio</mat-error>
+        </mat-form-field>
+        <button mat-stroked-button color="primary" (click)="buscarCep()">Buscar</button>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-label>Logradouro</mat-label>
+          <input matInput formControlName="logradouro">
+          <mat-error>Campo Obrigátorio</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>nº</mat-label>
+          <input matInput formControlName="numero">
+          <mat-error>Campo Obrigátorio</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-label>Complemento</mat-label>
+          <input matInput formControlName="complemento">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-label>Bairro</mat-label>
+          <input matInput formControlName="bairro">
+          <mat-error>Campo Obrigátorio</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Cidade</mat-label>
+          <input matInput formControlName="localidade">
+          <mat-error>Campo Obrigátorio</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Estado</mat-label>
+          <input matInput formControlName="estado">
+          <mat-error>Campo Obrigátorio</mat-error>
+        </mat-form-field>
+      </p>
+      <button mat-flat-button
+              type="submit"
+              color="primary"
+              [disabled]="formClient.invalid || formClient.pristine">
+              {{editMode ? 'Atualizar' : 'Cadastrar'}}
+      </button>
+      <button mat-stroked-button
+              type="reset"
+              color="primary">
+              Limpar
+      </button>
+  </form>
+</div>

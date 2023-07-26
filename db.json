@@ -6,11 +6,12 @@
       "sobrenome": "Nonato",
       "sexo": "masculino",
       "cpf":"33322211150",
-      "dataNascimento" : "1980-04-23",
+      "dataNascimento" : "08/03/1985",
       "telefone": "11996212225",
       "cep": "04011060",
       "logradouro":"Rua Funlano",
       "numero": 300,
+      "complemento": "ao lado do nada",
       "bairro": "Vila Nova",
       "localidade": "São Paulo",
       "estado": "SP"

@@ -11,6 +11,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from '../shared/shared.module';
+import { MatListModule } from '@angular/material/list';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+
+
 
 
 
@@ -29,7 +34,10 @@ import { SharedModule } from '../shared/shared.module';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    SharedModule
+    SharedModule,
+    MatListModule,
+    ReactiveFormsModule,
+    MatSelectModule,
   ]
 })
 export class ClienteModule { }

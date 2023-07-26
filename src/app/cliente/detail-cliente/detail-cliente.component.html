@@ -5,12 +5,53 @@
 <div class="cartao">
   <mat-card class="cliente">
     <mat-card-header>
-      <mat-card-title>Cliente: {{nome}} {{sobrenome}} </mat-card-title>
-      <mat-card-subtitle>Start</mat-card-subtitle>
+      <mat-card-title>{{nome}} {{sobrenome}} </mat-card-title>
     </mat-card-header>
+
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <span class="title" matListItemTitle>Celular:</span>
+          <span class="item" matListItemLine>{{editTelefone(telefone)}}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span class="title" matListItemTitle>Sexo:</span>
+          <span class="item" matListItemLine>{{sexo}}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span class="title" matListItemTitle>CPF:</span>
+          <span class="item" matListItemLine>{{editCpf(cpf)}}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span class="title" matListItemTitle>Data de Nascimento:</span>
+          <span class="item" matListItemLine>{{dataEdit(dataNascimento)}}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span class="title" matListItemTitle>CEP:</span>
+          <span class="item" matListItemLine>{{cep}}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span class="title" matListItemTitle>Endereço:</span>
+          <span class="item" matListItemLine>{{logradouro}} nº {{numero}}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span class="title" matListItemTitle>Complemento:</span>
+          <span class="item" matListItemLine>{{complemento}}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span class="title" matListItemTitle>Bairro:</span>
+          <span class="item" matListItemLine>{{bairro}}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span class="title" matListItemTitle>Cidade - Estado:</span>
+          <span class="item" matListItemLine>{{localidade}} - {{estado}}</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+
     <mat-card-actions>
-      <button mat-button>Edit</button>
-      <button mat-button>Delete</button>
+      <button class="botao" mat-flat-button color="primary" routerLink="/client/edit/{{id}}">Edit </button>
+      <button class="botao" mat-flat-button color="warn">Delete</button>
     </mat-card-actions>
   </mat-card>
 </div>
