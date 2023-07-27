@@ -79,6 +79,8 @@ export class DetailClienteComponent implements OnInit{
     let clientId = this.route.snapshot.params['id'];
     this.serviceSub = this.service.deleteClient(clientId).subscribe();
 
+    alert("Cliente removido com sucesso")
+
     this.router.navigate(['/client/list']);
   }
 

@@ -126,6 +126,29 @@ export class AddClienteComponent implements OnInit{
 
   updateClient(): void {
 
+    let clientId = this.route.snapshot.params['id'];
+
+    let cliente: Cliente = {
+      nome: this.formClient.getRawValue().nome,
+      sobrenome: this.formClient.getRawValue().sobrenome,
+      sexo: this.formClient.getRawValue().sexo,
+      cpf: this.formClient.getRawValue().cpf,
+      dataNascimento: this.formClient.getRawValue().dataNascimento,
+      telefone: this.formClient.getRawValue().telefone,
+      cep: this.formClient.getRawValue().cep,
+      logradouro: this.formClient.getRawValue().logradouro,
+      numero: this.formClient.getRawValue().numero,
+      bairro: this.formClient.getRawValue().bairro,
+      complemento: this.formClient.getRawValue().complemento,
+      localidade: this.formClient.getRawValue().localidade,
+      estado: this.formClient.getRawValue().estado,
+    }
+    this.serviceSub = this.clientService.putClient(clientId, cliente).subscribe()
+
+    alert("Cliente atualizado com sucesso!")
+
+    this.router.navigate(['/client/list']);
+
   }
 
 

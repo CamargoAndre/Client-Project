@@ -3,6 +3,7 @@
 </div>
 
 <div class="formulario">
+
   <form [formGroup]="formClient" (ngSubmit)="editMode ? updateClient() : createClient()">
       <mat-form-field >
         <mat-label>Nome</mat-label>
@@ -93,10 +94,12 @@
               [disabled]="formClient.invalid || formClient.pristine">
               {{editMode ? 'Atualizar' : 'Cadastrar'}}
       </button>
-      <button mat-stroked-button
+      <button mat-flat-button
               type="reset"
-              color="primary">
+              color="accent">
               Limpar
       </button>
+      <button type="button" class="botao" mat-flat-button color="warn" routerLink="/client/list">Voltar</button>
+
   </form>
 </div>
