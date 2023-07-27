@@ -1,7 +1,7 @@
 import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from '../cliente.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'src/app/shared/models/cliente-model';
 
 @Component({
@@ -16,7 +16,7 @@ export class DetailClienteComponent implements OnInit{
   sobrenome: string;
   sexo: string;
   cpf: string;
-  dataNascimento: Date;
+  dataNascimento: string;
   telefone: string;
   cep: string;
   logradouro: string;
@@ -32,7 +32,7 @@ export class DetailClienteComponent implements OnInit{
   serviceSub = new Subscription();
 
 
-  constructor(private route: ActivatedRoute, private service: ClienteService){}
+  constructor(private route: ActivatedRoute, private service: ClienteService, private router: Router){}
 
   ngOnInit(): void {
 
@@ -75,10 +75,11 @@ export class DetailClienteComponent implements OnInit{
     return foneModify;
   }
 
-  dataEdit(data: Date): string{
+  deleteCliente(): void{
+    let clientId = this.route.snapshot.params['id'];
+    this.serviceSub = this.service.deleteClient(clientId).subscribe();
 
-    let dateString = data.toString();
-    return dateString;
+    this.router.navigate(['/client/list']);
   }
 
 

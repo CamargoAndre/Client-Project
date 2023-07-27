@@ -61,14 +61,13 @@ export class AddClienteComponent implements OnInit{
   }
 
   fillForm(client: Cliente): void{
-    let dataNasc = client.dataNascimento.toString();
 
     this.formClient.patchValue({
       nome: client.nome,
       sobrenome: client.sobrenome,
       sexo: client.sexo,
       cpf: client.cpf,
-      dataNascimento: dataNasc,
+      dataNascimento: client.dataNascimento,
       telefone: client.telefone,
       cep: client.cep,
       logradouro: client.logradouro,
@@ -101,14 +100,13 @@ export class AddClienteComponent implements OnInit{
   }
 
   createClient(): void {
-    let data = new Date(this.formClient.getRawValue().dataNascimento)
 
     let cliente: Cliente = {
       nome: this.formClient.getRawValue().nome,
       sobrenome: this.formClient.getRawValue().sobrenome,
       sexo: this.formClient.getRawValue().sexo,
       cpf: this.formClient.getRawValue().cpf,
-      dataNascimento: data,
+      dataNascimento: this.formClient.getRawValue().dataNascimento,
       telefone: this.formClient.getRawValue().telefone,
       cep: this.formClient.getRawValue().cep,
       logradouro: this.formClient.getRawValue().logradouro,

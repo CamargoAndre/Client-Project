@@ -4,7 +4,7 @@ nome: string;
 sobrenome: string;
 sexo: string;
 cpf: string;
-dataNascimento: Date;
+dataNascimento: string;
 telefone: string;
 cep: string;
 logradouro: string;

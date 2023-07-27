@@ -21,15 +21,15 @@
       "sobrenome": "Camargo",
       "sexo": "masculino",
       "cpf": "34178436856",
-      "dataNascimento": "1985-08-03T03:00:00.000Z",
+      "dataNascimento": "08/03/1985",
       "telefone": "11996212612",
       "cep": "04503001",
-      "logradouro": "",
-      "numero": null,
-      "bairro": "",
+      "logradouro": "Rua Bento de Andrade",
+      "numero": "458",
+      "bairro": "Jardim Paulista",
       "complemento": null,
-      "localidade": "",
-      "estado": "",
+      "localidade": "São Paulo",
+      "estado": "SP",
       "id": 2
     }
   ]

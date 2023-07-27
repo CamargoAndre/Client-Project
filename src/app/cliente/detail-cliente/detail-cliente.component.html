@@ -24,7 +24,7 @@
         </mat-list-item>
         <mat-list-item>
           <span class="title" matListItemTitle>Data de Nascimento:</span>
-          <span class="item" matListItemLine>{{dataEdit(dataNascimento)}}</span>
+          <span class="item" matListItemLine>{{dataNascimento}}</span>
         </mat-list-item>
         <mat-list-item>
           <span class="title" matListItemTitle>CEP:</span>
@@ -51,7 +51,7 @@
 
     <mat-card-actions>
       <button class="botao" mat-flat-button color="primary" routerLink="/client/edit/{{id}}">Edit </button>
-      <button class="botao" mat-flat-button color="warn">Delete</button>
+      <button class="botao" mat-flat-button color="warn" (click)="deleteCliente()">Delete</button>
     </mat-card-actions>
   </mat-card>
 </div>
